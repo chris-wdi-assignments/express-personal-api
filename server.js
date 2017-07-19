@@ -73,7 +73,27 @@ app.post('/api/records', (req, res) => {
     res.json(record);
   })
 });
-//TODO app.put('/api/records/:id', (req, res) => {});
+
+app.put('/api/records/:id', (req, res) => {
+  let record_id = req.params.id;
+  let patch = req.body;
+  if (patch.tracks) {
+    // patch.tracks is a string of an object containing an array
+    //                                  ...we want that array
+    patch.tracks = JSON.parse(patch.tracks).data;
+  }
+  db.Record.findById(record_id, (err, record) => {
+    if (err) return res.status(500).json(err);
+    if (record === null) return res.status(404).json({message: 'Record not found'});
+    for (let i in patch) {  // only update properties specified in the patch
+      record[i] = patch[i];
+    }
+    record.save((err, record) => {
+      if (err) return res.status(500).json(err);
+      res.json(record);
+    });
+  })
+});
 //TODO app.delete('/api/records/:id', (req, res) => {});
 
 /**********
