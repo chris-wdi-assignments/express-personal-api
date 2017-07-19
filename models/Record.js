@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 const RecordSchema = new Schema({
   title: String,
   artist: String,
-  personalRating: Number,
-  yearOfRelease: Number,
+  personalRating: {type: Number, default: -1},  // negative is not yet rated
+  yearOfRelease: {type: Number, default: -1},  // negative is year unknown
   tracks: [String]
 });
 
