@@ -37,13 +37,11 @@ app.get('/', function homepage(req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-
 /*
  * JSON API Endpoints
  */
 const apiDocumentation = require('./docs/api.json');  // require at runtime so
                           // it's already in memory by the time someone GETs
-
 app.get('/api', (req, res) => res.json(apiDocumentation));
 
 const profileJson = require('./docs/profile.json'); // require at runtime
