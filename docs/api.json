@@ -13,6 +13,9 @@
       "method": "GET", "path": "/api/records", "description": "Lists my record collection."
     },
     {
+      "method": "GET", "path": "/api/records/:id", "description": "Info about a specific record."
+    },
+    {
       "method": "POST", "path": "/api/records", "description": "Create a new album"
     },
     {
