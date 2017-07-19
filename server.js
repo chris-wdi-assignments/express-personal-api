@@ -55,6 +55,27 @@ app.get('/api/records', (req, res) => {
   });
 });
 
+app.get('/api/records/:id', (req, res) => {
+  let record_id = req.params.id;
+  db.Record.findById(record_id, (err, record) => {
+    if (err) return res.status(500).json(err);
+    if (record === null) return res.status(404).json(
+      {message: `Record ${record_id} found.`}
+    );
+    res.json(record);
+  })
+});
+
+app.post('/api/records', (req, res) => {
+  let record = req.body;
+  db.Record.create(record, (err, record) => {
+    if (err) return res.status(500).json(err);
+    res.json(record);
+  })
+});
+//TODO app.put('/api/records/:id', (req, res) => {});
+//TODO app.delete('/api/records/:id', (req, res) => {});
+
 /**********
  * SERVER *
  **********/
