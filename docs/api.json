@@ -3,6 +3,11 @@
   "documentationUrl": "https://github.com/chris-wdi-assignments/express-personal-api/README.md",
   "baseURL": "https://stormy-lake-40912.herokuapp.com/",
   "endpoints": [
-    {"method": "", "path": "", "description": "Describes all available endpoints."}
+    {
+      "method": "GET", "path": "/api", "description": "Describes all available endpoints."
+    },
+    {
+      "method": "GET", "path": "/api/profile", "description": "Describes the developer."
+    }
   ]
 }
