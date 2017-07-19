@@ -94,7 +94,14 @@ app.put('/api/records/:id', (req, res) => {
     });
   })
 });
-//TODO app.delete('/api/records/:id', (req, res) => {});
+
+app.delete('/api/records/:id', (req, res) => {
+  const record_id = req.params.id;
+  db.Record.remove({_id: record_id}, (err) => {
+    if (err) res.status(404).json(err);
+    res.json({message: `Document ${record_id} successfully deleted.`});
+  });
+});
 
 /**********
  * SERVER *
