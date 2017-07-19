@@ -13,7 +13,13 @@
       "method": "GET", "path": "/api/records", "description": "Lists my record collection."
     },
     {
-      "method": "GET", "path": "/api/records/:id", "description": "Get info on a particular album."
+      "method": "POST", "path": "/api/records", "description": "Create a new album"
+    },
+    {
+      "method": "PUT", "path": "/api/records/:id", "description": "Modify an existing album."
+    },
+    {
+      "method": "DELETE", "path": "/api/records/:id", "description": "Destroy an album."
     }
   ]
 }
