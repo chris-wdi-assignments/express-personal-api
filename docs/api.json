@@ -1,0 +1,8 @@
+{
+  "message": "Here's my personal API.",
+  "documentationUrl": "https://github.com/chris-wdi-assignments/express-personal-api/README.md",
+  "baseURL": "https://stormy-lake-40912.herokuapp.com/",
+  "endpoints": [
+    {"method": "", "path": "", "description": "Describes all available endpoints."}
+  ]
+}
