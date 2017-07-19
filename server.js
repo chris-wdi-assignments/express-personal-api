@@ -1,10 +1,10 @@
 // require express and other modules
-var express = require('express'),
+const express = require('express'),
     app = express();
 
 // parse incoming urlencoded form data
 // and populate the req.body object
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // allow cross origin requests (optional)
@@ -19,7 +19,7 @@ app.use(function(req, res, next) {
  * DATABASE *
  ************/
 
-var db = require('./models');
+const db = require('./models');
 
 /**********
  * ROUTES *
