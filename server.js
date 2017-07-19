@@ -44,9 +44,7 @@ app.get('/', function homepage(req, res) {
 const apiDocumentation = require('./docs/api.json');  // require at runtime so
                           // it's already in memory by the time someone GETs
 
-app.get('/api', function apiIndex(req, res) {
-  res.json(apiDocumentation);
-});
+app.get('/api', (req, res) => res.json(apiDocumentation));
 
 const profileJson = require('./docs/profile.json'); // require at runtime
 app.get('/api/profile', (req, res) => res.json(profileJson));

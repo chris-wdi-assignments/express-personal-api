@@ -7,7 +7,13 @@
       "method": "GET", "path": "/api", "description": "Describes all available endpoints."
     },
     {
-      "method": "GET", "path": "/api/profile", "description": "Describes the developer."
+      "method": "GET", "path": "/api/profile", "description": "Describes the developer"
+    },
+    {
+      "method": "GET", "path": "/api/records", "description": "Lists my record collection."
+    },
+    {
+      "method": "GET", "path": "/api/records/:id", "description": "Get info on a particular album."
     }
   ]
 }
