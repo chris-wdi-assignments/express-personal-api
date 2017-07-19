@@ -47,6 +47,14 @@ app.get('/api', (req, res) => res.json(apiDocumentation));
 const profileJson = require('./docs/profile.json'); // require at runtime
 app.get('/api/profile', (req, res) => res.json(profileJson));
 
+app.get('/api/records', (req, res) => {
+  db.Record.find({}, (err, records) => {
+    if (err) res.status(500).json(err);
+    if (records.length === 0) res.status(404).json({message: "No records found."});
+    res.json(records);
+  });
+});
+
 /**********
  * SERVER *
  **********/
